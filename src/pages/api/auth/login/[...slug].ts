@@ -35,7 +35,7 @@ export default async function Handler(
   switch (method) {
     case "GET":
       try {
-        const { slug } = req.query;
+        const { slug }:any = req.query;
         const userInfo = [...slug];
         const email = userInfo[0];
         const password = userInfo[1];
