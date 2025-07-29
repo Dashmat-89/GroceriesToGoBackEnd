@@ -11,7 +11,9 @@ export default async function handler(
   await dbConnect();
 
   const { method } = req;
-
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*");
   switch (method) {
     case "GET":
       try {

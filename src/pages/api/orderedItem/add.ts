@@ -5,7 +5,9 @@ import OrderedItem from "@/models/orderedItem";
 
 export default async function handler(req, res) {
   await dbConnect();
-
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*");
   const { method } = req;
 
   switch (method) {
